@@ -1,5 +1,5 @@
 {
-  "name": "lobby-message-manager2",
+  "name": "lobby-message-manager",
   "version": "0.0.0",
    "engines": {
     "node": "14.x",    

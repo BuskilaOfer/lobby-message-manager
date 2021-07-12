@@ -10,10 +10,10 @@ const express = require("express");
 const app = express();
 
 app.use(requireHTTPS);
-app.use(express.static("./dist/lobby-message-manager2"));
+app.use(express.static("./dist/lobby-message-manager"));
 
 app.get("/*", (req, res) =>
-  res.sendFile("index.html", { root: "dist/lobby-message-manager2/" })
+  res.sendFile("index.html", { root: "dist/lobby-message-manager/" })
 );
 
 app.listen(process.env.PORT || 8080);
