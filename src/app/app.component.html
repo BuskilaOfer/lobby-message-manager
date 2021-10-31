@@ -9,7 +9,7 @@
 <!--  <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"-->
 <!--  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">-->
   <svg class ="icon" version="1.0" xmlns="http://www.w3.org/2000/svg"
-       width="150.000000pt" height="150.000000pt" viewBox="0 0 285.000000 380.000000"
+       width="200.000000pt" height="200.000000pt" viewBox="0 0 285.000000 380.000000"
        preserveAspectRatio="xMidYMid meet">
 
     <g transform="translate(0.000000,380.000000) scale(0.100000,-0.100000)"
@@ -83,9 +83,14 @@ m53 -18 c4 -6 -5 -10 -19 -10 -14 0 -26 5 -26 10 0 6 9 10 19 10 11 0 23 -4
     </g>
   </svg>
 
-  <div class="container">
-    <textarea *ngIf="!result" class = "input-group"></textarea>
-    <div *ngIf="result" class="answer" >{{result}}</div>
+  <div class="container d-flex flex-grow-1 align-content-center align-content-between justify-content-center">
+    <div *ngIf="showSpinner" class="card"
+         [ng2-loading]="showSpinner" >
+
+    </div>
+    <textarea *ngIf="!showSpinner && !result"  name="first"  [(ngModel)]="msg" class = "input-group"  ></textarea>
+    <div *ngIf="result" class="answer big" >{{result}}</div>
+    <div *ngIf="result" class="answer" >{{recommendedActions}}</div>
     <div class="Button" *ngIf="!result" (click)="isPhishing()">is phishing?</div>
     <div class="Button" *ngIf="result" (click)="return()">Return</div>
   </div>
